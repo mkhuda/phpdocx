@@ -1,7 +1,7 @@
 <div id="main-content">
 	<form accept-charset="UTF-8" name="userForm" class="daftar-form" action="index.php" method="post" enctype="multipart/form-data">
 		<legend>
-			Upload PDF Now !
+			Upload DOCX Now !
 		</legend>
 		<input id="files" name="files" size="50" type="file">
 		<input name="commit" value="Upload" type="submit">
