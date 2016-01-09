@@ -8,7 +8,7 @@
 	</form>
 	<?php
 
-	## This project using pdftotext by propper-utils
+	## This project using docx2txt linux command line utils
 	## By Mkhuda
 	if(isset($_FILES['files'])){
 		$uploaddir = 'tmp/';
@@ -19,14 +19,13 @@
 		$newfilename = round(microtime(true)) . '.' . end($temp);
 		if(move_uploaded_file($_FILES['files']['tmp_name'], $uploaddir.basename($newfilename.'docx'))) {
 
-			# make pdf and txt filename
+			# make docx and txt filename
 			$filesource = $newfilename.'docx';
 			$filetxt = $newfilename.'txt';
 
 			# command line (linux only)
 			$c = 'docx2txt < /var/www/html/phpdocx/tmp/'.$filesource.' > /var/www/html/phpdocx/tmp/'.$filetxt;
 			
-			echo $c;
 			# execute the command
 			exec($c,$output,$return);
 
